@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokedex JS</title>
+    <link rel="shortcut icon" href="https://assets.pokemon.com/static2/_ui/img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-screen">
+        <div class="left-screen-top">
+          <div class="led-container">
+            <div class="led led--blue"></div>
+          </div>
+          <div class="led led--red"></div>
+          <div class="led led--yellow"></div>
+          <div class="led led--green"></div>
+        </div>
+        <div class="left-screen-bottom">
+          <div class="main-screen">
+            <div class="main-screen-top-leds"></div>
+            <div id="display" class="main-display">
+              <div class="pokemon-image">
+                <img id="image" width="242.25" height="257.64" onerror="notfound()">
+              </div>
+            </div>
+            <div class="main-screen-speaker-led"></div>
+            <div class="main-screen-speaker">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+        <div class="left-screen-hinge">
+          <div class="hinge"></div>
+          <div class="hinge"></div>
+          <div class="hinge"></div>
+          <div class="hinge"></div>
+          <div class="hinge-reflex"></div>
+        </div>
+      </div>
+      <div class="right-screen">
+        <div class="right-screen-top">
+          <div></div>
+        </div>
+        <div class="right-screen-bottom">
+          <div class="info-container">
+            <div>
+              <!-- Input e Button -->
+              <input 
+                id="search" 
+                type="text" 
+                class="info-input" 
+                placeholder="Busque um pokemon"
+                value="pikachu"
+              />
+              <button 
+                class="info-button"
+                onclick="requestAPI()"
+              >
+                Buscar
+              </button>
+            </div>
+            <section class="info-screen">
+              <!-- Divs -->
+              <div id="categoria" class="info">
+                <div class="label">Categorias:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="tipo" class="info">
+                <div class="label">Tipo:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="tamanho" class="info">
+                <div class="label">Tamanho:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="peso" class="info">
+                <div class="label">Peso:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="evolution" class="info">
+                <div class="label">Evoluções:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="bio" class="info">
+                <div class="label">Habilidades:</div>
+                <div class="desc" id="info-text">- - -</div>
+              </div>
+              <div id="not-found"><b>Pokemon não encontrado!!!</b></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
